@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERCOOML | Contacto</title>
+    <link rel="stylesheet" href="CSS/Portal.css">
+    <link rel="stylesheet" href="CSS/Subservicios.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+
+</head>
+<body>
+      <header>
+    <div class="logo">
+       <a href="index.html"><img src="IMG/img_barra1.png" alt="SERCOOML Logo"></a>
+    </div>
+    <nav>
+      <a href="index.html">Acerca de</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+  </header>
+<div class="servicios-hero">
+<h1 style="text-align: center;">Dar el primer paso es de valientes</h1>
+</div>
+
+<p style="text-align: center;">       Ir a terapia no significa que estés roto o que hayas fracasado; significa que tienes las ganas y el coraje de estar mejor.<br> 
+          No tienes que cargar con todo tú solo ni esperar a que las cosas "se pongan peor" para buscar un espacio seguro. Regálate la oportunidad de hablar, sanar y encontrarte. Tu bienestar lo vale, y tú también.</p>
+
+<!-- Overlay (Fondo oscuro al abrir el sidebar) -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<!-- Barra gris de contacto -->
+<div class="barra-contacto">
+  <div class="foto-contacto">
+    <!-- Espacio para tu imagen (reemplaza el src) -->
+    <img src="IMG/User.png" alt="Foto de contacto" class="imagen-contacto">
+  </div>
+  
+  <div class="info-contacto">
+    <h3>MELIDA MARMOLEJO OROZCO</h3>
+    <p><img src="IMG/identificacion.png" alt="identificacion" style="width: 20px;">psicológo</p>
+     <p><img src="IMG/telefono.png" alt="telefono" style="width: 20px;">  No celular: +52 3117566233</p>
+     <p><img src="IMG/correo.png" alt="correo" style="width: 20px;">  Correo: CESAME@gmail.com</p>
+     
+     
+    <div class="redes-sociales">
+    <!--
+      <a href="#"><img src="ruta/icono-facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="ruta/icono-whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="ruta/icono-linkedin.png" alt="LinkedIn"></a>
+    -->
+    </div>
+  </div>
+  
+   <div class="qr-contacto">
+    <!-- Espacio para tu código QR -->
+    <img src="IMG/SESAME.png" alt="Código QR" class="imagen-qr">
+    <button class="btn-color" onclick="copyImageToClipboard()">Compartir qr</button>
+  </div>
+</div>
+
+<!-- Barra gris de contacto -->
+<div class="barra-contacto">
+  <div class="foto-contacto">
+    <!-- Espacio para tu imagen (reemplaza el src) -->
+    <img src="IMG/User.png" alt="Foto de contacto" class="imagen-contacto">
+  </div>
+  
+  <div class="info-contacto">
+    
+    <h3>JOSE DE JESUS JARA JIMENEZ</h3>
+    <p><img src="IMG/identificacion.png" alt="identificacion" style="width: 20px;">Psicológo</p>
+     <p><img src="IMG/telefono.png" alt="telefono" style="width: 20px;">  No celular: 3112936222</p>
+     <p><img src="IMG/correo.png" alt="correo" style="width: 20px;">  Correo: CESAME@gmail.com</p>
+     
+    <div class="redes-sociales">
+    <!--
+      <a href="#"><img src="ruta/icono-facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="ruta/icono-whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="ruta/icono-linkedin.png" alt="LinkedIn"></a>
+    -->
+    </div>
+  </div>
+  
+  <div class="qr-contacto">
+    <!-- Espacio para tu código QR -->
+    <img src="IMG/SESAME.png" alt="Código QR" class="imagen-qr">
+    <button class="btn-color" id="qr" onclick="copyImageToClipboard()">Compartir qr</button>
+  </div>
+ 
+</div>
+
+<!--Division de contenededor para formulario de datos-->
+ <!--Reservaciones-->
+    <div class="Bienvenida">
+    <h1> ¡ Puedes registrar tus datos y con gusto te contactaremos !</h1>
+    </div>
+    <div class="responsive-form">
+    <!--Formulario-->
+      <form>
+          <!--Nombre-->
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" required>
+          <br>
+          <!--Apellidos-->
+          <label for="apellidos">Apellidos</label>
+          <input id="apellidos" type="text" required>
+          <br>
+
+          <!--Correo electronico-->
+          <label for="telefono">Telefono</label>
+          <input id="telefono" type="text" required>
+          <br>
+
+          <!--Correo electronico-->
+          <label for="correos">Correo</label>
+          <input id="correos" type="text" required>
+          <br>
+          
+         
+          <!--Botones-->
+            <div class="form-btn">
+              <button class="btn-color" >Registrate</button>
+              <input class="btn-color" type="reset" value="Limpiar">
+            </div>
+            
+          
+    </form>
+    <div class="form-gallery"></div>
+  </div>
+
+  <a href="https://wa.me/+523322177566" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="IMG/logo_whatsapp.png" alt="WhatsApp" id="whatsapp-icon">
+    </a>
+
+<script>
+// Slider automático
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-servicios img.slide');
+function showSlide(idx) {
+  slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+}
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 4000);
+
+const abrirBtn = document.getElementById('abrirSidebar');
+const cerrarBtn = document.getElementById('closeMenuServicios');
+const sidebar = document.getElementById('menuServicios');
+const overlay = document.getElementById('sidebarOverlay');
+
+// ABRIR el sidebar con el botón hamburguesa
+abrirBtn.onclick = function() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+  abrirBtn.classList.add('menu-oculto'); // OCULTA el botón hamburguesa
+};
+
+// CERRAR el sidebar con la X o el overlay
+cerrarBtn.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+overlay.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+
+/*
+ * Función para copiar una imagen al portapapeles
+ */
+async function copyImageToClipboard() {
+    try {
+        const imageName = 'IMG/Work_Gab.png';
+        const imagePath = new URL(imageName, window.location.href).href;
+        
+        const response = await fetch(imagePath);
+        if (!response.ok) {
+            throw new Error(`No se pudo cargar la imagen: ${response.statusText}`);
+        }
+        
+        const blob = await response.blob();
+        
+        // Intentar copiar al portapapeles del sistema
+        try {
+            await navigator.clipboard.write([
+                new ClipboardItem({
+                    [blob.type]: blob
+                })
+            ]);
+            alert('¡Imagen copiada al portapapeles correctamente!');
+        } catch (clipboardError) {
+            // Fallback para dispositivos móviles
+            await copyImageMobileFallback(blob, imageName);
+        }
+        
+    } catch (error) {
+        console.error('Error al copiar la imagen:', error);
+        alert(`Error al copiar la imagen: ${error.message}\n\nAsegúrate que:\n1. La imagen existe en ${imagePath}\n2. Estás usando HTTPS/localhost\n3. Tu navegador soporta esta API`);
+    }
+}
+
+// Función de respaldo para dispositivos móviles
+async function copyImageMobileFallback(blob, imageName) {
+    try {
+        // Crear un enlace de descarga temporal
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = imageName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert('¡Imagen descargada! En móvil, la imagen se ha guardado en tu galería. Puedes compartirla manualmente desde allí.');
+        
+    } catch (fallbackError) {
+        throw new Error('No se pudo copiar la imagen. Tu dispositivo podría tener restricciones de seguridad.');
+    }
+}
+
+</script>
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100081761653119"><img src="IMG/logo_face.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/saludmentalpsiqueyeros?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMG/logo_insta.png" alt="Instagram" style="width: 50px; height:45px"></a>
+      <a href="https://x.com/Sercoom_GDL"><img src="IMG/logo_x.png" alt="X"></a>
+      
+      <p>ASM (Ayuda de salud mental) &copy; 2026 - Todos los derechos reservados</p>
+    </div>
+  </footer>
+    
+</body>
+</html>

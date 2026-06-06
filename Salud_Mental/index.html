@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <title>Centro de informacion</title>
+  <link rel="stylesheet" href="CSS/Portal.css">
+  <link rel="stylesheet" href="CSS/Subservicios.css">
+  
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+     <a href="index.html"><img src="IMG/img_barra1.png" alt="IMG_Barra"></a>
+    </div>
+    <nav>
+      <a href="index.html">Acerca de</a>
+      <a href="Contacto.html">Contacto</a>
+    </nav>
+
+  </header>
+
+
+
+<!-- Overlay (Fondo oscuro al abrir el sidebar) -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <main>
+   <!-- Hero Slider -->
+  <section class="servicios-hero">
+  <div class="slider-servicios">
+    <img src="IMG/img_carrucel1.png" class="slide active" alt="Servicio 1">
+    <img src="IMG/Img_carrucel2.png" class="slide" alt="Servicio 2">
+    <img src="IMG/img_carrucel3.png" class="slide" alt="Servicio 3">
+    <div class="slider-overlay"></div>
+    <div class="slider-texto">
+      <h1>Salud Mental</h1>
+      <p>Cuidar de ti no es un lujo, es una necesidad. Aquí encontrarás la claridad, el apoyo y las herramientas que necesitas para tu bienestar emocional.</p>
+    </div>
+    </div>
+</section>
+
+  <section class="about-diagonal">
+    <div class="about-content">
+    <h1>¿ Que es la salud mental ?</h1>
+      <p>
+        
+
+Hablemos de salud mental: Más allá de las etiquetas
+
+La salud mental es un estado de bienestar emocional, psicológico y social que permite afrontar el estrés diario, mantener relaciones sanas y tomar decisiones adecuadas. Implica cómo las personas piensan, sienten y actúan en distintas situaciones, y no solo la ausencia de enfermedad, sino también el equilibrio necesario para disfrutar la vida y adaptarse a los cambios.
+Comprender la salud mental permite reconocer su impacto en todas las etapas de la vida, desde la infancia hasta la vejez. Factores como la genética, el entorno familiar, la educación, la situación económica y experiencias traumáticas pueden influir en este equilibrio, y los problemas de salud mental pueden presentarse en cualquier persona, sin importar edad, género o condición social.<br>
+
+Es fundamental que las personas cuiden su salud mental a través de hábitos de vida saludables, como una buena nutrición, ejercicio y un sueño adecuado, además de buscar apoyo de un psicólogo o psiquiatra, incluso antes de que aparezcan los primeros síntomas de un posible trastorno.<br>
+La salud mental es un proceso continuo y dinámico. Imagínalo como un espectro: en un extremo está el bienestar pleno y en el otro el malestar profundo. Todos nos movemos a lo largo de esa línea durante nuestra vida, dependiendo de nuestras circunstancias, nuestra genética y el entorno que nos rodea.<br>
+Experimentar estrés antes de un examen, sentir duelo por una pérdida o tener días de mucha ansiedad no significa que "estés roto" o que hayas fracasado. Significa que eres humano. Lo verdaderamente importante de la salud mental es desarrollar la resiliencia: la capacidad de adaptarte, aprender de las dificultades y saber levantar la mano para pedir apoyo cuando el camino se pone demasiado cuesta arriba.
+
+
+</p>
+    </div>
+
+
+    <img src="IMG/img_post.png" alt="Habitos_SM" class="about-img">
+  </section>
+
+
+  <img src="IMG/Habitos_SM.png" alt="Habitos_SM" class="img_centrada">
+
+  <br>
+
+  <a href="https://wa.me/" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="IMG/logo_whatsapp.png" alt="WhatsApp" id="whatsapp-icon">
+    </a>
+</main>
+
+<script>
+// Slider automático
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-servicios img.slide');
+function showSlide(idx) {
+  slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+}
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 4000);
+
+const abrirBtn = document.getElementById('abrirSidebar');
+const cerrarBtn = document.getElementById('closeMenuServicios');
+const sidebar = document.getElementById('menuServicios');
+const overlay = document.getElementById('sidebarOverlay');
+
+// ABRIR el sidebar con el botón hamburguesa
+abrirBtn.onclick = function() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+  abrirBtn.classList.add('menu-oculto'); // OCULTA el botón hamburguesa
+};
+
+// CERRAR el sidebar con la X o el overlay
+cerrarBtn.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+overlay.onclick = function() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  abrirBtn.classList.remove('menu-oculto'); // VUELVE a mostrar el botón
+};
+
+</script>
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100081761653119"><img src="IMG/logo_face.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/saludmentalpsiqueyeros?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMG/logo_insta.png" alt="Instagram" style="width: 50px; height:45px"></a>
+      <a href=""><img src="IMG/logo_x.png" alt="X"></a>
+      
+      <br>
+      <p>ASM (Ayuda de salud mental) &copy; 2026 - Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>

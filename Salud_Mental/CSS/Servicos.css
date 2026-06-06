@@ -1,0 +1,435 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #24304A;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: #943fd1;
+}
+
+.logo img {
+  height: 58px;
+  left: 200px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 52px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: rgb(104, 200, 231);
+  font-size: 15px;
+}
+
+/*Seccion de slider y carrucel*/
+/* Hero slider */
+.servicios-hero {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Slider Container - Ocultar scrollbar pero mantener funcionalidad */
+.slider-servicios {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 380px;
+  overflow: hidden;
+  /* Para Firefox */
+  scrollbar-width: none;
+  /* Para IE/Edge */
+  -ms-overflow-style: none;
+  /* Elimina cualquier espacio sobrante */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ocultar scrollbar en Chrome/Safari/Opera */
+.slider-servicios::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Slides - Asegurar que no generen scroll */
+.slider-servicios img.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s;
+  z-index: 1;
+  /* Eliminar cualquier margen/padding que cause desbordamiento */
+  margin: 0;
+  padding: 0;
+}
+
+.slider-servicios img.active {
+  opacity: 1;
+  z-index: 2;
+}
+/* Overlay - Ajustar para cubrir completamente */
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #192938cc 40%, #19293844 100%);
+  z-index: 3;
+  /* Asegurar que no cause desplazamiento */
+  margin: 0;
+  padding: 0;
+}
+
+/* Texto del slider - Posicionamiento preciso */
+.slider-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  /* Eliminar cualquier espacio interno que cause desbordamiento */
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.slider-texto h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 16px #000a;
+  pointer-events: auto;
+}
+.slider-texto button {
+  background: #12b7e9;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 2px 12px #0004;
+  transition: background .2s;
+  pointer-events: auto;
+}
+.slider-texto button:hover {
+  background: #097a9c;
+}
+
+/* Sidebar */
+.sidebar-category-title {
+  display: block;
+  background: none;
+  border: none;
+  color: #12b7e9;
+  font-size: 1.15em;
+  font-weight: 700;
+  padding: 12px 0;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+}
+.sidebar-category-title:hover {
+  color: #0056a0;
+  text-decoration: underline;
+}
+
+
+/* Texto bajo el hero */
+.descripcion-servicios {
+  max-width: 1300px;
+  background: #fff;
+  margin: 32px auto 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #0001;
+  padding: 40px 0px 32px 32px;
+}
+.descripcion-servicios h2 {
+  margin-top: 0;
+  color: #24304A;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.descripcion-servicios p {
+  font-size: 1.18em;
+  line-height: 1.7;
+}
+
+
+
+/*Seccion de footer*/
+footer {
+  background: #24304A;
+  padding: 24px 0;
+  text-align: center;
+  color: white;
+}
+
+.social-icons a {
+  margin: 0 16px;
+  display: inline-block;
+}
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.social-icons a:hover img {
+  transform: scale(1.12);
+}
+
+.sidebar-servicios {
+  position: fixed;
+  top: 0; left: -440px; /* Oculto a la izquierda */
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 16px #0002;
+  padding: 40px 28px 22px 28px;
+  z-index: 11000;
+  transition: left 0.33s cubic-bezier(.4,1,.2,1);
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-servicios.open { left: 0; }
+.close-sidebar {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #24304A;
+  margin-bottom: 14px;
+}
+
+.sidebar-servicios h2 {
+  margin-top: 0; color: #24304A;
+  font-size: 1.2em; font-weight: 800;
+}
+.sidebar-category-title {
+  display: block;
+  color: #00b7e5;
+  font-size: 1.13em;
+  font-weight: 700;
+  padding: 12px 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar-category-title:hover {
+  color: #0056a0;
+  text-decoration: underline;
+}
+
+/* Overlay oscuro */
+.sidebar-overlay {
+  display: none;
+  position: fixed; left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: #0007;
+  z-index: 10999;
+}
+.sidebar-overlay.open { display: block; }
+
+/*Menu amburguesa*/
+.menu-hamburguesa {
+  position: absolute;
+  top: 30px; 
+  left: 2px;  
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 0;
+  display: block;
+}
+.menu-hamburguesa img {
+  width: 38px;
+  height: auto;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #f9f9f9; /* Color verde de WhatsApp */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: black;
+}
+
+.whatsapp-float img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al hacer clic */
+.whatsapp-float:active img {
+    transform: scale(0.9);
+}
+
+.img_centrada {
+  /* 1. Tamaño mediano controlado */
+  width: 1500px;
+            /* Ocupa el ancho disponible... */       /* ...pero nunca va a medir más de 500px (un tamaño mediano ideal) */
+  height: auto;           /* Mantiene las proporciones originales para que no se deforme */
+
+  /* 2. Centrado perfecto */
+  display: block;         /* Convierte la imagen en un bloque para poder centrarla */
+  margin-left: auto;      /* Empuja la imagen desde la izquierda al centro */
+  margin-right: auto;     /* Empuja la imagen desde la derecha al centro */
+
+  /* 3. Estética y distinción (Opcional, pero recomendado) */
+  border-radius: 8px;     /* Suaviza las esquinas de la imagen con un toque moderno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Le da una sombra sutil para que "salte" del fondo y se distinga bien */
+}
+
+@media (max-width:920px) and (min-width: 800px) {
+  /* Header ajustes */
+  h1{
+    font-size: 20px;
+  }
+  header {
+    padding: 14px 20px;
+  }
+  
+  nav a {
+    margin-left: 24px;
+    font-size: 0.9em;
+  }
+  
+  .logo img {
+    height: 48px;
+  }
+  
+  /*Ajuates Slider*/
+  .slider-servicios {
+    height: 280px;
+  }
+  
+  .slider-servicios img.slide {
+    height: 280px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .slider-texto button {
+    font-size: 1rem;
+    padding: 12px 32px;
+    margin-top: 16px;
+  }
+  
+  /* Content adjustments */
+  .descripcion-servicios {
+    padding: 24px 16px;
+    margin: 24px 16px 0;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+  }
+  
+  .descripcion-servicios h2 {
+    font-size: 1.4em;
+  }
+  
+  .descripcion-servicios p {
+    font-size: 1em;
+  }
+
+  .sidebar-servicios {
+    width: 280px;
+    left: -480px;
+    padding: 32px 20px 20px 20px;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 800px){
+
+  header {
+    padding: 7px 10px;
+  }
+  
+  nav a {
+    margin-left: 16px;
+    font-size: 0.75em;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .slider-servicios {
+    height: 220px;
+  }
+  
+  .slider-servicios img.slide {
+    height: 220px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .slider-texto button {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar-servicios {
+    width: 230px;
+    left: -380px;
+    padding: 32px 20px 20px 20px;
+  }
+
+  nav a:hover {
+  color: rgb(101, 212, 249);
+}
+} 
+

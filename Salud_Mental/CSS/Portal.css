@@ -1,0 +1,438 @@
+/* styles.css */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #24304A;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: #943fd1;
+}
+
+.logo img {
+  height: 58px;
+
+}
+
+nav a {
+  color: #fff;
+  margin-left: 52px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: rgb(101, 212, 249);
+  font-size: 15px;
+}
+
+/* Main Section */
+.about-diagonal {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 60px auto;
+  min-height: 430px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 4px 24px rgba(36,48,74,0.08);
+}
+
+.about-content {
+  flex: 0 0 60%;
+  padding: 48px 36px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-img {
+  flex: 1 1 40%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  /* Puedes ajustar el "20%" para variar el ángulo de la diagonal */
+}
+/*Seccion de slider y carrucel*/
+/* Hero slider */
+.servicios-hero {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Slider Container - Ocultar scrollbar pero mantener funcionalidad */
+.slider-servicios {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 380px;
+  overflow: hidden;
+  /* Para Firefox */
+  scrollbar-width: none;
+  /* Para IE/Edge */
+  -ms-overflow-style: none;
+  /* Elimina cualquier espacio sobrante */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ocultar scrollbar en Chrome/Safari/Opera */
+.slider-servicios::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Slides - Asegurar que no generen scroll */
+.slider-servicios img.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s;
+  z-index: 1;
+  /* Eliminar cualquier margen/padding que cause desbordamiento */
+  margin: 0;
+  padding: 0;
+}
+
+.slider-servicios img.active {
+  opacity: 1;
+  z-index: 2;
+}
+/* Overlay - Ajustar para cubrir completamente */
+.slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #192938cc 40%, #19293844 100%);
+  z-index: 3;
+  /* Asegurar que no cause desplazamiento */
+  margin: 0;
+  padding: 0;
+}
+
+/* Texto del slider - Posicionamiento preciso */
+.slider-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  /* Eliminar cualquier espacio interno que cause desbordamiento */
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.slider-texto h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 16px #000a;
+  pointer-events: auto;
+}
+.slider-texto button {
+  background: #12b7e9;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 2px 12px #0004;
+  transition: background .2s;
+  pointer-events: auto;
+}
+.slider-texto button:hover {
+  background: #097a9c;
+}
+
+/*Menu amburguesa*/
+.menu-hamburguesa {
+  position: absolute;
+  top: 30px; 
+  left: 2px;  
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 0;
+  display: block;
+}
+.menu-hamburguesa img {
+  width: 38px;
+  height: auto;
+}
+
+footer{
+  p{
+    color: #fff;
+  }
+}
+
+/*Boton de whatss*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #f9f9f9; /* Color verde de WhatsApp */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: black;
+}
+
+.whatsapp-float img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al hacer clic */
+.whatsapp-float:active img {
+    transform: scale(0.9);
+}
+
+.img_centrada {
+  /* 1. Tamaño mediano controlado */
+  width: 100%;            /* Ocupa el ancho disponible... */
+  max-width: 700px;       /* ...pero nunca va a medir más de 500px (un tamaño mediano ideal) */
+  height: auto;           /* Mantiene las proporciones originales para que no se deforme */
+
+  /* 2. Centrado perfecto */
+  display: block;         /* Convierte la imagen en un bloque para poder centrarla */
+  margin-left: auto;      /* Empuja la imagen desde la izquierda al centro */
+  margin-right: auto;     /* Empuja la imagen desde la derecha al centro */
+
+  /* 3. Estética y distinción (Opcional, pero recomendado) */
+  border-radius: 8px;     /* Suaviza las esquinas de la imagen con un toque moderno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Le da una sombra sutil para que "salte" del fondo y se distinga bien */
+}
+
+/* Responsive (móvil y tablet) */
+@media (max-width: 950px) {
+  .about-diagonal {
+    flex-direction: column;
+    border-radius: 28px;
+    min-height: 0;
+  }
+  .about-content {
+    flex: 1 1 100%;
+    padding: 28px 12px;
+  }
+  .about-img {
+    flex: 1 1 100%;
+    height: 220px;
+    width: 100%;
+    clip-path: none;
+    border-radius: 0 0 28px 28px;
+  }
+}
+
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+  
+  .about-card, .about-image {
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .about-card {
+    clip-path: none;
+    border-radius: 28px 28px 0 0;
+  }
+  
+  .about-triangle {
+    clip-path: none;
+    border-radius: 0 0 28px 28px;
+    height: 300px;
+  }
+}
+/* Footer */
+footer {
+  background: #24304A;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.social-icons a {
+  margin: 0 16px;
+  display: inline-block;
+}
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.social-icons a:hover img {
+  transform: scale(1.12);
+}
+
+@media (max-width: 950px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0 20px 0;
+  }
+  .about-triangle, .about-card {
+    max-width: 90vw;
+    min-width: unset;
+    width: 90vw;
+  }
+}
+
+@media (max-width:820px) and (min-width: 700px) {
+  /* Header ajustes */
+  h1{
+    font-size: 20px;
+  }
+  header {
+    padding: 14px 20px;
+  }
+  
+  nav a {
+    margin-left: 24px;
+    font-size: 0.9em;
+  }
+  
+  .logo img {
+    height: 48px;
+  }
+  
+  /*Ajuates Slider*/
+  .slider-servicios {
+    height: 280px;
+  }
+  
+  .slider-servicios img.slide {
+    height: 280px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .slider-texto button {
+    font-size: 1rem;
+    padding: 12px 32px;
+    margin-top: 16px;
+  }
+  
+  /* Content adjustments */
+  .descripcion-servicios {
+    padding: 24px 16px;
+    margin: 24px 16px 0;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+  }
+  
+  .descripcion-servicios h2 {
+    font-size: 1.4em;
+  }
+  
+  .descripcion-servicios p {
+    font-size: 1em;
+  }
+
+  .sidebar-servicios {
+    width: 280px;
+    left: -480px;
+    padding: 32px 20px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+
+  header {
+    padding: 7px 10px;
+  }
+  
+  nav a {
+    margin-left: 16px;
+    font-size: 0.75em;
+  }
+  
+  .logo img {
+    height: 40px;
+    
+  }
+  
+  .slider-servicios {
+    height: 220px;
+  }
+  
+  .slider-servicios img.slide {
+    height: 220px;
+  }
+  
+  .slider-texto h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .slider-texto button {
+    font-size: 0.9rem;
+    padding: 10px 24px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar-servicios {
+    width: 240px;
+    left: -280px;
+    padding: 32px 20px;
+  }
+
+  nav a:hover {
+  color: rgb(101, 212, 249);
+  font-size: 15px;
+}
+} 

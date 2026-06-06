@@ -1,0 +1,294 @@
+/* Estilos para la barra de contacto */
+.barra-contacto {
+  display: flex;
+  justify-content: center;
+  background-color: #c0bfbf; /* Gris claro */
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%; /* Disminuye el ancho (ajusta este porcentaje) */
+  max-width: 1000px; /* Ancho máximo opcional */
+  min-height: 200px;
+  margin: 30px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-left: 250px;
+}
+
+.foto-contacto {
+  flex: 0 0 220px; /* Ancho fijo para las imágenes */
+  height: 160px;
+  width: 400px;
+  background-color: #e0e0e0; /* Fondo gris más oscuro para el espacio */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.qr-contacto {
+  flex-direction: column;
+  flex: 0 0 220px; /* Ancho fijo para las imágenes */
+  height: 220px;
+  width: 400px;
+  background-color: #e0e0e0; /* Fondo gris más oscuro para el espacio */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imagen-contacto {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.imagen-qr{
+  max-width: 150px;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.info-contacto {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.info-contacto h3 {
+  color: #0056a0; /* Azul de SERCOOML */
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.info-contacto p {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.redes-sociales img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.1);
+}
+
+.btn-color {
+  
+  background: #12b7e9;
+  color: #fff;
+  font-size: 0.7rem;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 0 2px 12px #0004;
+  transition: background .2s;
+  pointer-events: auto;
+}
+
+.btn-color:hover {
+   background-color: #0056a0;
+}
+/* Responsividad para pantallas medianas (460px - 600px) */
+@media (min-width: 160px) and (max-width: 800px) {
+  .barra-contacto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-left: 37px; /* Reduce el margen izquierdo */
+    margin-right: 20px;
+    width: calc(100% - 100px); /* Ajuste preciso al ancho de pantalla */
+    padding: 10px;
+    min-height: 450px;
+    
+  }
+
+  .foto-contacto {
+    display: none !important;
+  }
+
+   .qr-contacto {
+    flex: 0 0 240px; /* Reduce el tamaño de los contenedores */
+    height: 365px;
+    width: 180px;
+    margin-bottom: 30px;
+    
+  }
+
+  .info-contacto {
+    padding: 0 15px; /* Menor espaciado interno */
+  }
+
+  .info-contacto h3 {
+    font-size: 1rem; /* Texto más pequeño */
+  }
+
+  .info-contacto p {
+    font-size: 0.85rem;
+  }
+
+  .redes-sociales img {
+    width: 25px; /* Íconos más compactos */
+    height: 25px;
+  }
+}
+
+
+.Bienvenida{
+    text-align: center;
+}
+
+.responsive-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 15% 50px;
+}
+
+.form-gallery{
+    background-image: url("../IMG/contacto_correo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 0px 12px 12px 0px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 10% 5% 10%;
+    background-color: #c7c7c6d1;
+    border-radius: 12px 0px 0px 12px;
+}
+
+input[type='text'], input[type='date'], select{
+    padding: 10px;
+    margin: 10px 0 5px;
+    border-radius: 12px;
+    border: 1px solid var(--late);
+}
+label{
+    font-weight: bold;
+}
+
+.select-case> label{
+    font-weight: 200;
+}
+
+.select-case{
+    display: flex;
+    align-items: start;
+}
+
+.end-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+}
+
+.fecha{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.correos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+
+.room-class{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 10px;
+    width: 120%;
+}
+
+.form-people{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.form-btn{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+@media (max-width: 960px) {
+    .end-form{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .fecha{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .room-class{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+    }
+    input[type='text'], input[type='date'], select{
+        padding: 10px;
+        margin: 5px 0 5px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body{
+        background-image: url("../resources/playa_5.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .responsive-form{
+        display: flex;
+        margin: 25px 10% 25px;
+    }
+
+    form{
+        display: flex;
+        border-radius: 12px; 
+        width: 100%;
+    }
+
+    .form-gallery{
+       display: none;
+    }
+}

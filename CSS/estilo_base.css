@@ -1,0 +1,111 @@
+/* styles.css */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #24304A;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: #0056a0;
+}
+
+.logo img {
+  height: 58px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 52px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: rgb(74, 209, 209);
+  width: 15px;
+}
+
+/* Main Section */
+
+/* Media queries para responsividad */
+
+/* Footer */
+footer {
+  background: #24304A;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.social-icons a {
+  margin: 0 16px;
+  display: inline-block;
+}
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.social-icons a:hover img {
+  transform: scale(1.12);
+}
+
+@media (max-width: 950px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0 20px 0;
+  }
+  .about-triangle, .about-card {
+    max-width: 90vw;
+    min-width: unset;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 800px) {
+  header, .about-card, .about-triangle {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .about-card {
+    padding: 24px 12px;
+  }
+  .about-triangle {
+    height: 220px;
+    width: 220px;
+  }
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+@media (min-width: 360px) and (max-width: 480px) {
+
+  .logo img {
+    height: 48px; /* Reducción desde 58px (desktop) */
+  }
+  nav a {
+    font-size: 0.9em; /* Texto más pequeño */
+    margin-left: 24px; /* Menos espacio entre enlaces */
+  }
+
+  header {
+    padding: 14px 20px; /* Menos padding que en desktop (24px 48px) */
+  }
+
+  nav a:hover {
+  color: rgb(101, 212, 249);
+}
+}
